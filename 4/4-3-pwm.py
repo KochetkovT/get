@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
-pwm_pin = 21
+pwm_pin = 24
 
 GPIO.setup(pwm_pin, GPIO.OUT)
 pwm = GPIO.PWM(pwm_pin, 1000)
