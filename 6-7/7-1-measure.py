@@ -69,7 +69,7 @@ try:
     
     print('Общая продолжительность эксперимента составила {:.2f} с'.format(time_experiment))
     print('Период одного измерения {:.2f} мс'.format(time_experiment/len(data)*1e3))
-    print('Средняя частота дискретизации {:.0f} Гц'.format(1/(time_experiment/len(data))))
+    print('Средняя частота дискретизации {:.00f} Гц'.format(1/(time_experiment/len(data))))
     print('Шаг квантования АЦП {:.2f}'.format(3.3/256))
 
 finally:

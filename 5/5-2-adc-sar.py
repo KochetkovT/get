@@ -30,6 +30,7 @@ try:
     while True:
         val = adc()
         print("{}, {:.2f}".format(val, val*3.3/256))
+        time.sleep(1)
 
 
 finally:
