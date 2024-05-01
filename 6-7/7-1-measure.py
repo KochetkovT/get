@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import RPi.GPIO as GPIO
 import time
 import matplotlib.pyplot as plt
@@ -18,6 +19,7 @@ def decimal2binary(value):
     return [int(i) for i in bin(value)[2:].zfill(8)]
 
 def adc():
+    GPIO.setup(leds, GPIO.OUT)
     val = 0
     for i in range(7, -1, -1):
         val += 2**i
@@ -41,6 +43,7 @@ try:
         U_c = adc()
         data.append(U_c)
         print(U_c )
+        print(U_c * 3.3/256)
         GPIO.output(leds, decimal2binary(U_c))
 
     # GPIO.output(troyka, GPIO.LOW)
@@ -49,6 +52,7 @@ try:
     # while U_c > 50:
     #     U_c = adc()
     #     data.append(U_c * 3.3/256)
+        print(U_c * 3.3/256)
     #     print(U_c)
     #     GPIO.output(leds, decimal2binary(U_c))
 
@@ -69,7 +73,7 @@ try:
     
     print('Общая продолжительность эксперимента составила {:.2f} с'.format(time_experiment))
     print('Период одного измерения {:.2f} мс'.format(time_experiment/len(data)*1e3))
-    print('Средняя частота дискретизации {:.0f} Гц'.format(1/(time_experiment/len(data))))
+    print('Средняя частота дискретизации {:.00f} Гц'.format(1/(time_experiment/len(data))))
     print('Шаг квантования АЦП {:.2f}'.format(3.3/256))
 
 finally:
